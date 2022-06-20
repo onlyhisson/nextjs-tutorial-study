@@ -4,6 +4,12 @@ import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
 import utilStyles from "../../styles/utils.module.css";
 
+/**
+ * https://nextjs.org/docs/api-reference/data-fetching/get-static-paths#fallback-false
+ *
+ * 현재의 페이지 파일에서 getStaticPaths를 export하면 paths를 리턴한다, i18n 처리도.
+ * Next.js 는 정적으로 각 path를 page 컴포넌트에서 빌드시 생성한다.
+ */
 export async function getStaticPaths() {
   const paths = getAllPostIds();
 
